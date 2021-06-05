@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body{
+    background: url("updatewala.jpg");
+    background-size: 100%;
+}
+div{
+  font-size: 30px;
+  color: black;
+}
+.card{  
+    padding-top:20px;
+    height: 600px;
+    width: 450px;
+    border: 2px #000000 solid;
+    border-radius: 20px;
+    background-color:white;
+    position:relative;
+    left:500px;
+    top:50px;
+    box-shadow: 2px 2px 7px 7px white;
+    text-align: center;
+}
+img{
+    height:50%;
+    width:60%;
+    position: relative;
+    left:5px;
+    top:5px;
+}
+p{
+    font-size:large;
+}
+#search{
+    position:absolute;
+    top:30px;
+    left:1150px;
+    background-color:none;
+    border:none;
+    border-bottom:2px white solid;
+    width:150px;
+}
+#ui{
+    position:absolute;
+    top:33px;
+    left:1310px;
+}
+button{
+    border:none;
+    color:white;
+    border-radius:10%;
+    background-color:black;
+    margin: 5px 50px;
+    padding: 5px 20px;
+}
+</style>
+
+<body>
+    <div class="card">
+        <img src="./<%= profileData.src %>">
+        <br><br>
+        <p><%= profileData.name %></p>
+        <p><%= profileData.mobile %></p>
+        <p><%= profileData.email %></p>
+    </div>
+    <form action="/info" method="post">
+        <button  value ="backtohome" id="backtohome">Log Out</button>
+    </form>
+    <form action="/update" method="post">
+        <button class="w3-btn w3-blue" value="update" id="update">Update</button>
+    </form>
+    <form action="/delete" method="post">
+        <button class="w3-btn w3-blue" value="delete" id="delete">Delete</button>
+    </form>
+    <form action="/search" method="post">
+        <input type="text" placeholder="Search.." name="search" id="search">
+        <button type="submit"><i class="fa fa-search" id="ui"></i></button>
+    </form>
+</body>
+</html>
